@@ -10,8 +10,8 @@ class redirectController extends Controller
 
         //Searches DB for slug specified in url and retrives asociated url
         $url=DB::table('url')->where('slug',$req->slug )->value('url');
-
-        //Gets clicks count from DB for requested url
+        if($url){
+            //Gets clicks count from DB for requested url
         $clicks=DB::table('url')->where('slug',$req->slug )->value('clicks');
 
         //Increments and updates clicks for requested url
@@ -19,5 +19,7 @@ class redirectController extends Controller
 
     //Redirect to requested url
     return redirect($url);
+        }
+        abort(404);
     }
 }
