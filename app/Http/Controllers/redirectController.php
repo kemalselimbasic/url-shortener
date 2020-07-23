@@ -8,15 +8,16 @@ class redirectController extends Controller
 {
     public function index(Request $req){
 
-    $url=DB::table('url')->where('slug',$req->slug )->value('url');
-    $clicks=DB::table('url')->where('slug',$req->slug )->value('clicks');
-    $clicks=$clicks+1;
-    DB::table('url')->where('slug',$req->slug )->update(['clicks'=>$clicks]);
+        //Searches DB for slug specified in url and retrives asociated url
+        $url=DB::table('url')->where('slug',$req->slug )->value('url');
 
+        //Gets clicks count from DB for requested url
+        $clicks=DB::table('url')->where('slug',$req->slug )->value('clicks');
 
+        //Increments and updates clicks for requested url
+        DB::table('url')->where('slug',$req->slug )->update(['clicks'=>++$clicks]);
 
-
-
- return redirect($url);
+    //Redirect to requested url
+    return redirect($url);
     }
 }

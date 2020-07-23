@@ -7,7 +7,12 @@
     <title>Url-shortener</title>
 </head>
 <body>
-<div class="container ">
+
+
+
+<div class="container" style="margin-top: 10px"><h1>URL-Shortener</h1></div>
+@yield('error')
+<div class="container" style="margin-top: 20px">
 <form action="/url"  method="POST">
 <div class="form-group">
 <input type="text" class="form-control" name="url" placeholder="Insert your url!" required>
@@ -17,6 +22,8 @@
 </div>
 
 </div>
+
+    @yield('preview')
 
 
 
