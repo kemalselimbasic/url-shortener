@@ -17,4 +17,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','home@home');
 Route::post('/url','postControler@index');
-Route::get('/{url}','redirectController@index');
+Route::get('/{slug}','redirectController@index');

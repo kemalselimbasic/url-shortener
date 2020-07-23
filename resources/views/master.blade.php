@@ -11,7 +11,7 @@
 <form action="/url"  method="POST">
 <div class="form-group">
 <input type="text" class="form-control" name="url" placeholder="Insert your url!" required>
-<input type="text" class="form-control" name="slug" placeholder="Insert your slug! Leave blank for random!" required>
+<input type="text" class="form-control" name="slug" placeholder="Insert your slug! Leave blank for random!" >
 {{csrf_field()}}
 <input type="submit" class="btn btn-success" value="Submit">
 </div>
